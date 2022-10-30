@@ -1,83 +1,119 @@
 ### Описание проекта:
 
-Проект YamDB.
+Проект API_YamDB.
 
-YaMDb собирает отзывы (Review) пользователей на произведения (Titles). Произведения делятся на категории: «Книги», «Фильмы», «Музыка». Список категорий (Category) может быть расширен администратором
+Cобирает отзывы (Review) пользователей на произведения (Titles). Произведения делятся на категории: «Книги», «Фильмы», «Музыка». Список категорий (Category) может быть расширен администратором.
 
-Запросы к API начинаются с /api/v1
+*Проект написан на Python 3.7.9*
+*Запросы к API начинаются с* ```/api/v1```
 
 ---
 
 ### Как запустить проект:
 
-Клонировать репозиторий и перейти в него в командной строке:
+-- ***Клонируйте репозиторий и перейдите в него в командной строке:***
 
 ```
-git clone https://github.com/<username>/api_final_yatube.git
-```
-
-```
-cd yatube_api
-```
-
-Cоздать и активировать виртуальное окружение:
-
-```
-python3 -m venv env
+git clone https://github.com/FataLklg/api_yamdb.git
 ```
 
 ```
-source env/bin/activate
+cd api_yamdb
 ```
 
-Установить зависимости из файла requirements.txt:
+-- ***Cоздайте и активируйте виртуальное окружение:***
 
 ```
-python3 -m pip install --upgrade pip
+python -m venv venv
+```
+
+```
+source venv/Scripts/activate
+```
+
+-- ***Обновите модуль pip и установите зависимости из файла requirements.txt:***
+
+```
+python -m pip install --upgrade pip
 ```
 
 ```
 pip install -r requirements.txt
 ```
-
-Выполнить миграции:
-
-```
-python3 manage.py makemigrations
-python3 manage.py migrate
-```
-
-Запустить проект:
+-- ***Создайте файл ".env" и пропишите в нём секретный ключ:***
 
 ```
-python3 manage.py runserver
+touch .env
+```
+```
+SECRET_KEY=<ваш секретный ключ>  # шаблон наполнения .env файла
+```
+-- ***Перейдите в дирректорию api_yamdb:***
+
+```
+cd api_yamdb
+```
+-- ***Создайте и примените миграции:***
+
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
+-- ***Запустите проект:***
+
+```
+python manage.py runserver
 ```
 
 ---
+### Список доступных адресов:
 
-### Модуль AUTH:
+##### - Модуль AUTH:
 
 Аутентификация пользователей реализована на основе JWT-токенов.
+Регистрация нового пользователя POST ```/auth/signup/```
+Получение JWT-токена в обмен на username и confirmation code POST ```/auth/token/```
 
-Регистрация нового пользователя POST ```/auth/signup```
-
-Получение JWT-токена в обмен на username и confirmation code POST ```/auth/token```
-
-### Модуль USERS:
-
-Получение списка всех пользователей GET ```/users```
-
+##### - Модуль USERS:
+Получение списка всех пользователей GET ```/users/```
 Добавление пользователя POST ```/users/```
-
 Получение пользователя по username GET ```/users/{username}/```
-
 Преобразование данных пользователя по username PATCH ```/users/{username}/```
-
 Удаление пользователя по username DELETE ```/users/{username}/```
-
 Получение данных своей учетной записи GET ```/users/me/```
-
 Преобразование данных своей учетной записи PATCH ```/users/me/```
+
+##### - Модуль CATEGORIES:
+Получение списка всех категорий GET ```/categories/```
+Добавление новой категории POST ```/categories/```
+Удаление категории DELETE ```/categories/{slug}/```
+
+##### - Модуль GENRE:
+Получение списка всех жанров GET ```/genres/```
+Добавление жанра POST ```/genres/```
+Удаление жанра DELETE ```/genres/{slug}/```
+
+##### - Модуль TITLES:
+Получение списка всех произведений GET ```/titles/```
+Добавление произведения POST ```/titles/```
+Получение информации о произведении GET ```/titles/{titles_id}/```
+Частичное обновление информации о произведении PATCH ```/titles/{titles_id}/```
+Удаление произведения DELETE ```/titles/{titles_id}/```
+
+##### - Модуль REVIEWS:
+Получение списка всех отзывов GET ```/titles/{titles_id}/reviews/```
+Добавление нового отзыва POST ```/titles/{titles_id}/reviews/```
+Получение отзыва по id GET ```/titles/{titles_id}/reviews/{review_id}/```
+Частичное обновление отзыва по id PATCH ```/titles/{titles_id}/reviews/{review_id}/```
+Удаление отзыва по id DELETE ```/titles/{titles_id}/reviews/{review_id}/```
+
+##### - Модуль COMMENTS:
+Получение списка всех комментариев к отзыву GET ```/titles/{titles_id}/reviews/{review_id}/comments/```
+Добавление комментария к отзыву POST ```/titles/{titles_id}/reviews/{review_id}/comments/```
+Получение комментария к отзыву GET ```/titles/{titles_id}/reviews/{review_id}/comments/{comment_id}/```
+Частичное обновление комментария к отзыву PATCH ```/titles/{titles_id}/reviews/{review_id}/comments/{comment_id}/```
+Удаление комментария к отзыву DELETE ```/titles/{titles_id}/reviews/{review_id}/comments/{comment_id}/```
 
 ---
 
