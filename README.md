@@ -11,7 +11,7 @@ Cобирает отзывы (Review) пользователей на произ
 
 ### Как запустить проект:
 
--- ***Клонируйте репозиторий и перейдите в него в командной строке:***
+- ***Клонируйте репозиторий и перейдите в него в командной строке:***
 
 ```
 git clone https://github.com/FataLklg/api_yamdb.git
@@ -21,7 +21,7 @@ git clone https://github.com/FataLklg/api_yamdb.git
 cd api_yamdb
 ```
 
--- ***Cоздайте и активируйте виртуальное окружение:***
+- ***Cоздайте и активируйте виртуальное окружение:***
 
 ```
 python -m venv venv
@@ -31,7 +31,7 @@ python -m venv venv
 source venv/Scripts/activate
 ```
 
--- ***Обновите модуль pip и установите зависимости из файла requirements.txt:***
+- ***Обновите модуль pip и установите зависимости из файла requirements.txt:***
 
 ```
 python -m pip install --upgrade pip
@@ -40,7 +40,7 @@ python -m pip install --upgrade pip
 ```
 pip install -r requirements.txt
 ```
--- ***Создайте файл ".env" и пропишите в нём секретный ключ:***
+- ***Создайте файл ".env" и пропишите в нём секретный ключ:***
 
 ```
 touch .env
@@ -48,19 +48,19 @@ touch .env
 ```
 SECRET_KEY=<ваш секретный ключ>  # шаблон наполнения .env файла
 ```
--- ***Перейдите в дирректорию api_yamdb:***
+- ***Перейдите в дирректорию api_yamdb:***
 
 ```
 cd api_yamdb
 ```
--- ***Создайте и примените миграции:***
+- ***Создайте и примените миграции:***
 
 ```
 python manage.py makemigrations
 python manage.py migrate
 ```
 
--- ***Запустите проект:***
+- ***Запустите проект:***
 
 ```
 python manage.py runserver
