@@ -69,7 +69,7 @@ python manage.py runserver
 ---
 ### Список доступных адресов:
 
-##### - Модуль AUTH:
+#### - Модуль AUTH:
 
 Аутентификация пользователей реализована на основе JWT-токенов.
 
@@ -77,7 +77,7 @@ python manage.py runserver
 
 Получение JWT-токена в обмен на username и confirmation code POST `/auth/token/`
 
-##### - Модуль USERS:
+#### - Модуль USERS:
 Получение списка всех пользователей GET `/users/`
 
 Добавление пользователя POST `/users/`
@@ -92,21 +92,21 @@ python manage.py runserver
 
 Преобразование данных своей учетной записи PATCH `/users/me/`
 
-##### - Модуль CATEGORIES:
+#### - Модуль CATEGORIES:
 Получение списка всех категорий GET `/categories/`
 
 Добавление новой категории POST `/categories/`
 
 Удаление категории DELETE `/categories/{slug}/`
 
-##### - Модуль GENRE:
+#### - Модуль GENRE:
 Получение списка всех жанров GET `/genres/`
 
 Добавление жанра POST `/genres/`
 
 Удаление жанра DELETE `/genres/{slug}/`
 
-##### - Модуль TITLES:
+#### - Модуль TITLES:
 Получение списка всех произведений GET `/titles/`
 
 Добавление произведения POST `/titles/`
@@ -117,7 +117,7 @@ python manage.py runserver
 
 Удаление произведения DELETE `/titles/{titles_id}/`
 
-##### - Модуль REVIEWS:
+#### - Модуль REVIEWS:
 Получение списка всех отзывов GET `/titles/{titles_id}/reviews/`
 
 Добавление нового отзыва POST `/titles/{titles_id}/reviews/`
@@ -128,7 +128,7 @@ python manage.py runserver
 
 Удаление отзыва по id DELETE `/titles/{titles_id}/reviews/{review_id}/`
 
-##### - Модуль COMMENTS:
+#### - Модуль COMMENTS:
 Получение списка всех комментариев к отзыву GET `/titles/{titles_id}/reviews/{review_id}/comments/`
 
 Добавление комментария к отзыву POST `/titles/{titles_id}/reviews/{review_id}/comments/`
